@@ -11,7 +11,7 @@ import { Task } from './task.model';
   providers: [ApiService]
 })
 export class AppComponent {
-  tasks = [{title: 'test'}]
+  tasks = [{title: 'test', description: 'testando', complete: false, user: 'djasidasjdiasjij'}]
   selectedTask: Task = {};
 
   constructor(private api: ApiService) {
@@ -31,7 +31,11 @@ export class AppComponent {
     }
     console.log(task.user);
   }
-  updateTask = () => {
+  updateTask = (task: Task, isChecked: boolean) => {
+    if(isChecked){
+      task.complete = !task.complete
+    }
+      this.selectedTask = task
       this.api.updateTask(this.selectedTask).subscribe((data: any) => {
         this.selectedTask = data;
         this.getTasks()

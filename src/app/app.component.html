@@ -1,14 +1,32 @@
-<h2>List of tasks</h2>
-<ul>
-  <li *ngFor="let task of tasks">
-    <h2 (click)="taskClicked(task)">{{task.title}}</h2>
-  </li>
-</ul>
+<div class="container">
+  <h1> ToDo App</h1>
 <hr>
-Title <input type="text" [(ngModel)]="selectedTask.title"/><br>
-Description <input type="text" [(ngModel)]="selectedTask.description"/><br>
-Complete <input type="checkbox" [(ngModel)]="selectedTask.complete"/><br>
-User <input type="text" [(ngModel)]="selectedTask.user"/><br>
-<button (click)="updateTask()">PUT</button>
-<button (click)="createTask()">POST</button>
-<button (click)="deleteTask()">DELETE</button>
+  Title <input type="text" class="form-control" [(ngModel)]="selectedTask.title"/><br>
+  Description <input type="text"  class="form-control" [(ngModel)]="selectedTask.description"/><br>
+  Complete <input type="checkbox"  [(ngModel)]="selectedTask.complete"/><br>
+  User <input type="text"  class="form-control" [(ngModel)]="selectedTask.user"/><br>
+  <button (click)="updateTask(selectedTask,false)">PUT</button>
+  <button (click)="createTask()">POST</button>
+  <button (click)="deleteTask()">DELETE</button>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        
+        <th scope="col">Task</th>
+        <th scope="col">Description</th>
+        <th scope="col">Completed</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        
+        <td>{{task.title}}</td>
+        <td>{{task.description}}</td>
+        <td><input id="myCheckbox" type="checkbox" (change)="updateTask(task, true)" [checked]="task.complete"></td>
+        <td><button class="btn btn-danger btn-sm">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
