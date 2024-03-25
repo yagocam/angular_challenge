@@ -8,4 +8,7 @@
 Title <input type="text" [(ngModel)]="selectedTask.title"/><br>
 Description <input type="text" [(ngModel)]="selectedTask.description"/><br>
 Complete <input type="checkbox" [(ngModel)]="selectedTask.complete"/><br>
+User <input type="text" [(ngModel)]="selectedTask.user"/><br>
 <button (click)="updateTask()">PUT</button>
+<button (click)="createTask()">POST</button>
+<button (click)="deleteTask()">DELETE</button>

@@ -34,8 +34,21 @@ export class AppComponent {
   updateTask = () => {
       this.api.updateTask(this.selectedTask).subscribe((data: any) => {
         this.selectedTask = data;
+        this.getTasks()
       });
-    
   }
+  createTask = () => {
+    this.api.createTask(this.selectedTask).subscribe((data: any) => {
+      this.tasks.push(data) 
+      this.getTasks()
+    });
+}
+deleteTask = () => {
+  if(this.selectedTask.id_task){
+  this.api.deleteTask(this.selectedTask.id_task).subscribe((data: any) => {
+    this.getTasks()
+  });
+  }
+}
 
 }
