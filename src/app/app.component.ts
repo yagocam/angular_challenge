@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { ApiService } from './api.service';
+import { Task } from './task.model';
+
+
 
 @Component({
   selector: 'app-root',
@@ -9,13 +12,30 @@ import { ApiService } from './api.service';
 })
 export class AppComponent {
   tasks = [{title: 'test'}]
+  selectedTask: Task = {};
 
   constructor(private api: ApiService) {
     this.getTasks();
   }
   getTasks = () => {
-    this.api.getAllTasks().subscribe((response: any[]) => {
-      this.tasks = response; 
-    },)
+    this.api.getAllTasks().subscribe((data: any) => {
+      this.tasks = data; //
+    });
   }
+
+  taskClicked = (task: Task) => {
+    if (task.id_task) { 
+      this.api.getTask(task.id_task).subscribe((data: any) => {
+        this.selectedTask = data;
+      });
+    }
+    console.log(task.user);
+  }
+  updateTask = () => {
+      this.api.updateTask(this.selectedTask).subscribe((data: any) => {
+        this.selectedTask = data;
+      });
+    
+  }
+
 }
