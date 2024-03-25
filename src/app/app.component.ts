@@ -19,7 +19,7 @@ export class AppComponent {
   }
   getTasks = () => {
     this.api.getAllTasks().subscribe((data: any) => {
-      this.tasks = data; //
+      this.tasks = data; 
     });
   }
 
@@ -47,10 +47,12 @@ export class AppComponent {
       this.getTasks()
     });
 }
-deleteTask = () => {
+deleteTask = (task: Task) => {
+  this.selectedTask = task;
   if(this.selectedTask.id_task){
   this.api.deleteTask(this.selectedTask.id_task).subscribe((data: any) => {
     this.getTasks()
+    this.selectedTask = {}
   });
   }
 }
