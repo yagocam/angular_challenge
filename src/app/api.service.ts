@@ -8,7 +8,7 @@ import { Login } from './login/login.model'
 })
 export class ApiService {
 
-  baseurl = "http://djangoapichallenge-production.up.railway.app";
+  baseurl = "https://djangoapichallenge-production.up.railway.app";
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 
   constructor(private http: HttpClient) {}
