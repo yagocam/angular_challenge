@@ -17,28 +17,24 @@ export class ApiService {
 
   loginUser(loginObj: Login): Observable<any>{
     const body = {username: loginObj.username, password:loginObj.password}
-    return this.http.post(this.baseurl + '/api/token/', body,{headers: this.httpHeaders})
+    return this.http.post(this.baseurl + '/api/token/', body)
   }
 
   getAllTasks(): Observable<any>{
-    return this.http.get(this.baseurl + '/tasks/', {headers: this.httpHeaders})
+    return this.http.get(this.baseurl + '/tasks/', )
   }
   getTask(id: string): Observable<any>{
-    return this.http.get(this.baseurl + '/tasks/' + id + '/',
-    {headers: this.httpHeaders})
+    return this.http.get(this.baseurl + '/tasks/' + id + '/')
   }
   updateTask(task: Task): Observable<any>{
     const body = {title: task.title, description: task.description, complete: task.complete};
-    return this.http.put(this.baseurl + '/tasks/' + task.id_task + '/', body,
-    {headers: this.httpHeaders})
+    return this.http.put(this.baseurl + '/tasks/' + task.id_task + '/', body)
   }
   createTask(task: Task): Observable<any>{
     const body = {title: task.title, description: task.description, complete: task.complete, user:task.user};
-    return this.http.post(this.baseurl + '/tasks/', body,
-    {headers: this.httpHeaders})
+    return this.http.post(this.baseurl + '/tasks/', body)
   }
   deleteTask(id: string): Observable<any>{
-    return this.http.delete(this.baseurl + '/tasks/' + id + '/',
-    {headers: this.httpHeaders})
+    return this.http.delete(this.baseurl + '/tasks/' + id + '/')
   }
 }
