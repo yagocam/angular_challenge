@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Task } from '../task.model';
+import { ExcelService } from '../services/excel.service';
 
 
 
@@ -12,10 +13,29 @@ import { Task } from '../task.model';
 export class TodolistComponent {
   tasks = [{title: 'test', description: 'testando', complete: false, user: 'djasidasjdiasjij'}]
   selectedTask: Task = {};
+  
 
-  constructor(private api: ApiService) {
+  
+  constructor(private api: ApiService, private excelService: ExcelService) {
     this.getTasks();
   }
+
+  onFileChange(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      this.excelService.processFile(file).then((data: any) => {
+        for (let i = 0; i < data.length; i++) {
+          // Acessando os elementos internos e exibindo-os
+          this.selectedTask.title = data[i][0]
+          this.selectedTask.description = data[i][1]
+          this.createTask();
+        }
+      }).catch((error) => {
+        console.error("Erro ao processar o arquivo:", error);
+      });
+    }
+  }
+
   getTasks = () => {
     this.api.getAllTasks().subscribe((data: any) => {
       this.tasks = data; 
