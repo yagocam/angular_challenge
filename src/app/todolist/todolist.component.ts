@@ -25,7 +25,6 @@ export class TodolistComponent {
     if (file) {
       this.excelService.processFile(file).then((data: any) => {
         for (let i = 0; i < data.length; i++) {
-          // Acessando os elementos internos e exibindo-os
           this.selectedTask.title = data[i][0]
           this.selectedTask.description = data[i][1]
           this.createTask();

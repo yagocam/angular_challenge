@@ -1,0 +1,53 @@
+[33mcommit 6f92a74510d8d3e76ee2b739432d2d936db6dda1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: yago <yagocam5@gmail.com>
+Date:   Mon Mar 25 21:47:12 2024 -0300
+
+    excel support
+
+[33mcommit f8aef34d2c38aecd2fc03d053f2fdff008f9e97f[m
+Author: yago <yagocam5@gmail.com>
+Date:   Mon Mar 25 21:12:44 2024 -0300
+
+    jwt authentication
+
+[33mcommit c9143bd5df123f7668e40eb58e9e65620a350745[m
+Author: yago <yagocam5@gmail.com>
+Date:   Mon Mar 25 18:46:55 2024 -0300
+
+    criando rota login
+
+[33mcommit c63ca82065764d5bcfc03c07ec1b9645887f09dc[m
+Author: yago <yagocam5@gmail.com>
+Date:   Mon Mar 25 18:12:22 2024 -0300
+
+    melhorando visual
+
+[33mcommit 16791e82e5aed6fbf3e6018fa4fdd08872cbb1c8[m
+Author: yago <yagocam5@gmail.com>
+Date:   Mon Mar 25 17:44:54 2024 -0300
+
+    melhorias visuais
+
+[33mcommit 82920b4593c161bc051cd5092872c6fe94aa4dd9[m
+Author: yago <yagocam5@gmail.com>
+Date:   Mon Mar 25 16:53:20 2024 -0300
+
+    crud
+
+[33mcommit 5f149d8b513d760ed5bbe0d3d0def07245795a36[m
+Author: yago <yagocam5@gmail.com>
+Date:   Mon Mar 25 16:38:49 2024 -0300
+
+    api calls
+
+[33mcommit 70fc5bfc6d48a7f243e38e46caa2ca6f71e88421[m
+Author: yago <yagocam5@gmail.com>
+Date:   Mon Mar 25 14:35:06 2024 -0300
+
+    first commit
+
+[33mcommit eb1a961a96638303bec024f65f496a5683e16e16[m
+Author: yago <yagocam5@gmail.com>
+Date:   Mon Mar 25 13:57:59 2024 -0300
+
+    initial commit
