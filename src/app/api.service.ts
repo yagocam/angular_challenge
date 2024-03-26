@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Task } from './task.model';
+import { Login } from './login/login.model'
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +11,14 @@ export class ApiService {
   baseurl = "http://127.0.0.1:8000";
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
+  
+  
+
+  loginUser(loginObj: Login): Observable<any>{
+    const body = {username: loginObj.username, password:loginObj.password}
+    return this.http.post(this.baseurl + '/api/token/', body,{headers: this.httpHeaders})
+  }
 
   getAllTasks(): Observable<any>{
     return this.http.get(this.baseurl + '/tasks/', {headers: this.httpHeaders})

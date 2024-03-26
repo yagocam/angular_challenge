@@ -28,7 +28,6 @@ export class TodolistComponent {
         this.selectedTask = data;
       });
     }
-    console.log(task.user);
   }
   updateTask = (task: Task, isChecked: boolean) => {
     if(isChecked){
