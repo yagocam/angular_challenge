@@ -1,0 +1,7 @@
+{
+    "/*": {
+        "target": "https://djangoapichallenge-production.up.railway.app",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
