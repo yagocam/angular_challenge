@@ -19,6 +19,10 @@ Acessar todos os endpoints da api do django (https://github.com/yagocam/django_a
 ## Login component
 ![enter image description here](https://i.imgur.com/bDBskiN.png)
 
+## Tela de login
+![enter image description here](https://i.imgur.com/0YbQILJ.png)
+## Tela principal para operações
+![enter image description here](https://i.imgur.com/wg4DztH.png)
 
 ## Hospedado em netlify
 https://master--joyful-quokka-5622ed.netlify.app
