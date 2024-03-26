@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { TodolistComponent } from './todolist/todolist.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
   { path: 'dashboard', component: TodolistComponent }
 ];
 @NgModule({
